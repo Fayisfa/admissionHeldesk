@@ -53,6 +53,24 @@
           color: #6b7280;
         }
       }
+      /* Custom scrollbar for modal */
+      .modal-content::-webkit-scrollbar {
+        width: 8px;
+      }
+      .modal-content::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+      }
+      .modal-content::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 10px;
+      }
+      .modal-content::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+      }
+      .overflow-hidden {
+        overflow: hidden;
+      }
     </style>
   </head>
   <body class="bg-gray-50 min-h-screen">
@@ -116,25 +134,6 @@
       </div>
 
       <!-- Search Bar -->
-      <div
-        class="bg-white rounded-xl p-4 mb-6 shadow-sm border border-gray-100"
-      >
-        <div class="flex flex-col md:flex-row gap-3">
-          <div class="flex-1 relative">
-            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-            <input
-              type="text"
-              placeholder="Search colleges, courses or locations"
-              class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-            />
-          </div>
-          <button
-            class="bg-green-600 hover:bg-green-700 text-white rounded-lg px-6 py-2 font-medium transition flex items-center justify-center"
-          >
-            <i class="fas fa-search mr-2"></i>Search
-          </button>
-        </div>
-      </div>
 
       <!-- Mobile Filter Button -->
       <button
@@ -196,22 +195,22 @@
             <div class="p-4 border-b border-gray-100">
               <div
                 class="flex items-center justify-between cursor-pointer mb-3"
-                onclick="toggleFilterSection('locationFilter')"
+                onclick="toggleFilterSection('districtFilter')"
               >
-                <h3 class="font-semibold text-gray-800">Location</h3>
+                <h3 class="font-semibold text-gray-800">District</h3>
                 <i
                   class="fas fa-chevron-down text-gray-500"
-                  id="locationFilterIcon"
+                  id="districtFilterIcon"
                 ></i>
               </div>
-              <div id="locationFilter" style="display: none">
+              <div id="districtFilter" style="display: none">
                 <div class="relative mb-3">
                   <i
                     class="fas fa-search absolute left-3 top-3 text-gray-400"
                   ></i>
                   <input
                     type="text"
-                    placeholder="Search location"
+                    placeholder="Search district"
                     class="w-full pl-10 pr-4 py-2 bg-gray-50 rounded-lg border border-gray-200 focus:outline-none focus:ring-1 focus:ring-green-500"
                   />
                 </div>
@@ -220,11 +219,10 @@
                     <input
                       type="checkbox"
                       class="form-checkbox h-5 w-5 text-green-600 rounded"
-                      checked
                     />
                     <span class="ml-2 text-gray-700"
-                      >Kerala
-                      <span class="text-gray-500 text-sm">(672)</span></span
+                      >Thiruvananthapuram
+                      <span class="text-gray-500 text-sm">(59)</span></span
                     >
                   </label>
                   <label class="flex items-center hover:bg-gray-50 p-1 rounded">
@@ -233,8 +231,78 @@
                       class="form-checkbox h-5 w-5 text-green-600 rounded"
                     />
                     <span class="ml-2 text-gray-700"
-                      >Kerala - Other
-                      <span class="text-gray-500 text-sm">(81)</span></span
+                      >Kollam
+                      <span class="text-gray-500 text-sm">(45)</span></span
+                    >
+                  </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700"
+                      >Pathanamthitta
+                      <span class="text-gray-500 text-sm">(32)</span></span
+                    >
+                  </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700"
+                      >Alappuzha
+                      <span class="text-gray-500 text-sm">(28)</span></span
+                    >
+                  </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700"
+                      >Kottayam
+                      <span class="text-gray-500 text-sm">(53)</span></span
+                    >
+                  </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700"
+                      >Idukki
+                      <span class="text-gray-500 text-sm">(24)</span></span
+                    >
+                  </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700"
+                      >Ernakulam
+                      <span class="text-gray-500 text-sm">(67)</span></span
+                    >
+                  </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700"
+                      >Thrissur
+                      <span class="text-gray-500 text-sm">(48)</span></span
+                    >
+                  </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700"
+                      >Palakkad
+                      <span class="text-gray-500 text-sm">(36)</span></span
                     >
                   </label>
                   <label class="flex items-center hover:bg-gray-50 p-1 rounded">
@@ -253,16 +321,6 @@
                       class="form-checkbox h-5 w-5 text-green-600 rounded"
                     />
                     <span class="ml-2 text-gray-700"
-                      >Thiruvananthapuram
-                      <span class="text-gray-500 text-sm">(59)</span></span
-                    >
-                  </label>
-                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
-                    <input
-                      type="checkbox"
-                      class="form-checkbox h-5 w-5 text-green-600 rounded"
-                    />
-                    <span class="ml-2 text-gray-700"
                       >Kozhikode
                       <span class="text-gray-500 text-sm">(56)</span></span
                     >
@@ -273,14 +331,31 @@
                       class="form-checkbox h-5 w-5 text-green-600 rounded"
                     />
                     <span class="ml-2 text-gray-700"
-                      >Kottayam
-                      <span class="text-gray-500 text-sm">(53)</span></span
+                      >Wayanad
+                      <span class="text-gray-500 text-sm">(19)</span></span
+                    >
+                  </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700"
+                      >Kannur
+                      <span class="text-gray-500 text-sm">(42)</span></span
+                    >
+                  </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700"
+                      >Kasaragod
+                      <span class="text-gray-500 text-sm">(20)</span></span
                     >
                   </label>
                 </div>
-                <button class="text-blue-500 text-sm mt-2 hover:underline">
-                  + Show more
-                </button>
               </div>
             </div>
 
@@ -339,19 +414,16 @@
                     >
                   </label>
                 </div>
-                <button class="text-blue-500 text-sm mt-2 hover:underline">
-                  + Show more
-                </button>
               </div>
             </div>
 
-            <!-- College Type Filter -->
+            <!-- College authority Filter -->
             <div class="p-4">
               <div
                 class="flex items-center justify-between cursor-pointer mb-3"
                 onclick="toggleFilterSection('typeFilter')"
               >
-                <h3 class="font-semibold text-gray-800">College Type</h3>
+                <h3 class="font-semibold text-gray-800">College Authority</h3>
                 <i
                   class="fas fa-chevron-down text-gray-500"
                   id="typeFilterIcon"
@@ -389,6 +461,84 @@
                       <span class="text-gray-500 text-sm">(139)</span></span
                     >
                   </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700"
+                      >Autonomous
+                      <span class="text-gray-500 text-sm">(139)</span></span
+                    >
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- collleg type filter-->
+            <div class="p-4">
+              <div
+                class="flex items-center justify-between cursor-pointer mb-3"
+                onclick="toggleFilterSection('collegeTypeFilter')"
+              >
+                <h3 class="font-semibold text-gray-800">College Types</h3>
+                <i
+                  class="fas fa-chevron-down text-gray-500"
+                  id="collegeTypeFilterIcon"
+                ></i>
+              </div>
+              <div id="collegeTypeFilter" style="display: none">
+                <div class="space-y-2 pl-1">
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700">
+                      Engineering
+                      <span class="text-gray-500 text-sm">(203)</span>
+                    </span>
+                  </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700">
+                      Medical
+                      <span class="text-gray-500 text-sm">(97)</span>
+                    </span>
+                  </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700">
+                      Arts & Science
+                      <span class="text-gray-500 text-sm">(315)</span>
+                    </span>
+                  </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700">
+                      Polytechnic
+                      <span class="text-gray-500 text-sm">(122)</span>
+                    </span>
+                  </label>
+                  <label class="flex items-center hover:bg-gray-50 p-1 rounded">
+                    <input
+                      type="checkbox"
+                      class="form-checkbox h-5 w-5 text-green-600 rounded"
+                    />
+                    <span class="ml-2 text-gray-700">
+                      Management
+                      <span class="text-gray-500 text-sm">(56)</span>
+                    </span>
+                  </label>
                 </div>
               </div>
             </div>
@@ -411,470 +561,536 @@
           <div
             class="bg-white rounded-xl p-4 mb-4 shadow-sm border border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-3"
           >
+            <!-- Colleges Count -->
             <div>
               <span class="font-bold text-gray-800">672</span>
               <span class="text-gray-600"> colleges found</span>
             </div>
-            <div class="flex items-center w-full md:w-auto">
-              <span class="mr-2 text-gray-600 whitespace-nowrap">Sort By:</span>
-              <div class="relative w-full md:w-auto">
-                <select
-                  class="appearance-none bg-gray-50 border border-gray-200 rounded-lg pl-3 pr-10 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-700 w-full"
+
+            <!-- Search Bar -->
+            <div
+              class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 w-full md:w-auto"
+            >
+              <div class="flex flex-col md:flex-row gap-3">
+                <div class="flex-1 relative">
+                  <i
+                    class="fas fa-search absolute left-3 top-3 text-gray-400"
+                  ></i>
+                  <input
+                    type="text"
+                    placeholder="Search colleges, courses or locations"
+                    class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  />
+                </div>
+                <button
+                  class="bg-green-600 hover:bg-green-700 text-white rounded-lg px-6 py-2 font-medium transition flex items-center justify-center"
                 >
-                  <option>Popularity</option>
-                  <option>Fees: Low to High</option>
-                  <option>Fees: High to Low</option>
-                  <option>Rating</option>
-                  <option>Ranking</option>
-                </select>
-                <i
-                  class="fas fa-chevron-down absolute right-3 top-3 text-gray-500 pointer-events-none"
-                ></i>
+                  <i class="fas fa-search mr-2"></i>Search
+                </button>
               </div>
             </div>
           </div>
 
-          <!-- Sacred Heart College -->
+          <!-- Selected Best College Card Design (Combination of the best elements) -->
           <div
-            class="bg-white rounded-xl p-5 mb-4 shadow-sm border border-gray-100 hover:shadow-md transition"
+            class="bg-white rounded-2xl p-6 mb-6 shadow-md border border-gray-200 hover:shadow-lg transition-all"
           >
+            <!-- Header Section -->
             <div
-              class="flex flex-col md:flex-row md:items-start justify-between"
+              class="flex flex-col md:flex-row md:items-center justify-between gap-4"
             >
-              <div class="flex">
-                <div class="mr-4 flex-shrink-0">
-                  <!-- <div class="relative">
-                    <img
-                      src="/api/placeholder/120/120"
-                      alt="SHC Logo"
-                      class="w-20 h-20 rounded-lg border border-gray-200"
-                    />
-                    <div
-                      class="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-br-lg rounded-tl-lg"
-                    >
-                      NAAC A+
-                    </div>
-                  </div> -->
+              <div>
+                <h3
+                  class="text-blue-700 font-bold text-lg sm:text-xl hover:underline cursor-pointer"
+                  onclick="document.getElementById('modal-gect').classList.remove('hidden')"
+                >
+                  Government Engineering College Thrissur - GECT
+                </h3>
+                <div
+                  class="text-sm text-gray-600 flex flex-wrap gap-x-3 gap-y-1 mt-1"
+                >
+                  <span class="flex items-center">
+                    <i class="fas fa-map-marker-alt mr-1 text-gray-400"></i
+                    >Thrissur, Kerala
+                  </span>
+                  <span class="flex items-center">
+                    <i class="fas fa-building mr-1 text-gray-400"></i>Government
+                  </span>
+                </div>
+              </div>
+              <!-- <div class="flex items-center gap-2">
+                <span
+                  class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                  >NAAC A+</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                  >NIRF Ranked</span
+                >
+              </div> -->
+            </div>
+
+            <!-- College Details -->
+            <div
+              class="mt-4 text-sm text-gray-700 grid grid-cols-1 sm:grid-cols-3 gap-4"
+            >
+              <div class="flex items-start gap-2">
+                <i class="fas fa-university text-blue-500 mt-1"></i>
+                <div>
+                  <div class="font-medium text-gray-600">University</div>
+                  <div class="text-gray-800">
+                    APJ Abdul Kalam Technological University (KTU)
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fas fa-school text-green-600 mt-1"></i>
+                <div>
+                  <div class="font-medium text-gray-600">College Type</div>
+                  <div class="text-gray-800">Engineering</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fas fa-shield-alt text-green-600 mt-1"></i>
+                <div>
+                  <div class="font-medium text-gray-600">Authority</div>
+                  <div class="text-gray-800">Government</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Info Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"
+                >
+                  <i class="fas fa-book"></i>
                 </div>
                 <div>
-                  <div class="flex items-center mb-1">
-                    <h3
-                      class="text-blue-600 font-semibold text-xl hover:underline"
-                    >
-                      Sacred Heart College - SHC
-                    </h3>
-                    <div
-                      class="ml-3 bg-yellow-50 text-yellow-700 text-xs font-medium px-2 py-1 rounded"
-                    >
-                      <i class="fas fa-star text-yellow-400 mr-1"></i>4.2/5
+                  <div class="text-gray-500 text-xs sm:text-sm">
+                    UG Courses Offered
+                  </div>
+                  <div class="font-semibold text-gray-800 text-sm sm:text-base">
+                    9 Courses
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center"
+                >
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div>
+                  <div class="text-gray-500 text-xs sm:text-sm">
+                    PG Courses Offered
+                  </div>
+                  <div class="font-semibold text-gray-800 text-sm sm:text-base">
+                    16 Courses
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Buttons -->
+            <div
+              class="flex flex-col sm:flex-row justify-between items-center mt-6 pt-4 border-t border-gray-100 gap-3"
+            >
+              <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                <a
+                  href="tel:8943402137"
+                  class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-4 py-2 flex items-center justify-center transition text-sm w-full sm:w-auto"
+                >
+                  <i class="fas fa-phone-alt mr-2"></i> Muhammed Jabir
+                </a>
+                <a
+                  href="tel:7902743251"
+                  class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-4 py-2 flex items-center justify-center transition text-sm w-full sm:w-auto"
+                >
+                  <i class="fas fa-phone-alt mr-2"></i> Abdulla B
+                </a>
+                <a
+                  href="https://chat.whatsapp.com/GxdQvEGizIaKcFgtioaYh2"
+                  target="_blank"
+                  class="bg-green-600 hover:bg-green-700 text-white rounded-lg px-4 py-2 flex items-center justify-center transition text-sm w-full sm:w-auto"
+                >
+                  <i class="fab fa-whatsapp mr-2"></i> Join WhatsApp Group
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="flex justify-center mt-8">
+            <nav class="inline-flex rounded-md shadow-sm">
+              <a
+                href="#"
+                class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+              >
+                Previous
+              </a>
+              <a
+                href="#"
+                class="px-3 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+              >
+                1
+              </a>
+              <a
+                href="#"
+                class="px-3 py-2 border border-gray-300 bg-green-600 text-white"
+              >
+                2
+              </a>
+              <a
+                href="#"
+                class="px-3 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+              >
+                3
+              </a>
+              <a
+                href="#"
+                class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+              >
+                Next
+              </a>
+            </nav>
+          </div>
+
+          <!-- Enhanced Modal -->
+          <div
+            id="modal-gect"
+            class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden"
+          >
+            <div
+              class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+            >
+              <!-- Modal Header -->
+              <div class="bg-gradient-to-r from-blue-600 to-blue-800 p-6">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h2 class="text-2xl font-bold text-white">
+                      Government Engineering College Thrissur (GECT)
+                    </h2>
+                    <div class="flex flex-wrap items-center gap-2 mt-2">
+                      <span
+                        class="bg-white bg-opacity-20 text-white px-3 py-1 rounded-full text-sm"
+                      >
+                        <i class="fas fa-map-marker-alt mr-1"></i> Thrissur,
+                        Kerala
+                      </span>
+                      <span
+                        class="bg-white bg-opacity-20 text-white px-3 py-1 rounded-full text-sm"
+                      >
+                        <i class="fas fa-building mr-1"></i> Government
+                      </span>
+                      <span
+                        class="bg-white bg-opacity-20 text-white px-3 py-1 rounded-full text-sm"
+                      >
+                        <i class="fas fa-star mr-1"></i> 4.2/5
+                      </span>
                     </div>
                   </div>
-                  <div
-                    class="flex items-center text-sm text-gray-600 mb-1 flex-wrap"
+                  <button
+                    onclick="document.getElementById('modal-gect').classList.add('hidden')"
+                    class="text-white hover:text-gray-200 text-2xl"
                   >
-                    <i class="fas fa-map-marker-alt text-gray-400 mr-1"></i>
-                    <span>Kochi, Kerala</span>
-                    <span class="mx-2 text-gray-300 hidden sm:inline">|</span>
-                    <span class="text-gray-700 font-medium block sm:inline"
-                      >Private</span
-                    >
-                    <span class="mx-2 text-gray-300 hidden sm:inline">|</span>
-                    <span class="text-green-600 font-medium block sm:inline"
-                      >Estd. 1944</span
-                    >
+                    &times;
+                  </button>
+                </div>
+              </div>
+
+              <!-- Modal Content (Scrollable) -->
+              <div
+                class="modal-content overflow-y-auto p-6"
+                style="max-height: calc(90vh - 120px)"
+              >
+                <!-- College Overview -->
+                <div class="mb-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                    College Overview
+                  </h3>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <div class="flex items-start gap-3 mb-4">
+                        <div
+                          class="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0"
+                        >
+                          <i class="fas fa-university text-lg"></i>
+                        </div>
+                        <div>
+                          <h4 class="font-medium text-gray-600">University</h4>
+                          <p class="text-gray-800">
+                            APJ Abdul Kalam Technological University (KTU)
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex items-start gap-3 mb-4">
+                        <div
+                          class="w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0"
+                        >
+                          <i class="fas fa-shield-alt text-lg"></i>
+                        </div>
+                        <div>
+                          <h4 class="font-medium text-gray-600">Authority</h4>
+                          <p class="text-gray-800">Government</p>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start gap-3">
+                        <div
+                          class="w-12 h-12 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center flex-shrink-0"
+                        >
+                          <i class="fas fa-trophy text-lg"></i>
+                        </div>
+                        <div>
+                          <h4 class="font-medium text-gray-600">
+                            Accreditations
+                          </h4>
+                          <div class="flex flex-wrap gap-2 mt-1">
+                            <span
+                              class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                              >NAAC A+</span
+                            >
+                            <span
+                              class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                              >NIRF Ranked</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex items-start gap-3 mb-4">
+                        <div
+                          class="w-12 h-12 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center flex-shrink-0"
+                        >
+                          <i class="fas fa-users text-lg"></i>
+                        </div>
+                        <div>
+                          <h4 class="font-medium text-gray-600">Placement</h4>
+                          <p class="text-gray-800">
+                            <span class="font-semibold"
+                              >85% Placement Rate</span
+                            >
+                            <br />
+                            Median Salary: ₹4.5 LPA
+                            <br />
+                            Top Recruiters: TCS, Infosys, Wipro, Bosch
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex items-start gap-3">
+                        <div
+                          class="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0"
+                        >
+                          <i class="fas fa-rupee-sign text-lg"></i>
+                        </div>
+                        <div>
+                          <h4 class="font-medium text-gray-600">Fees</h4>
+                          <p class="text-gray-800">
+                            UG: ₹12,000 - ₹50,000 per year<br />
+                            PG: ₹15,000 - ₹75,000 per year
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                </div>
+
+                <!-- Courses Offered -->
+                <div class="mb-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                    Courses Offered
+                  </h3>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4
+                        class="font-medium text-blue-600 mb-2 flex items-center"
+                      >
+                        <i class="fas fa-book mr-2"></i> Undergraduate Programs
+                      </h4>
+                      <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>B.Tech in Civil Engineering</li>
+                        <li>B.Tech in Mechanical Engineering</li>
+                        <li>B.Tech in Electrical & Electronics Engineering</li>
+                        <li>B.Tech in Chemical Engineering</li>
+                        <li>B.Tech in Computer Science & Engineering</li>
+                        <li>B.Tech in Electronics & Communication</li>
+                        <li>B.Tech in Production Engineering</li>
+                        <li>B.Arch (Architecture)</li>
+                        <li>B.Tech in Information Technology</li>
+                      </ul>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4
+                        class="font-medium text-green-600 mb-2 flex items-center"
+                      >
+                        <i class="fas fa-graduation-cap mr-2"></i> Postgraduate
+                        Programs
+                      </h4>
+                      <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>M.Tech in Structural Engineering</li>
+                        <li>M.Tech in Thermal Engineering</li>
+                        <li>M.Tech in Power Systems</li>
+                        <li>M.Tech in Chemical Engineering</li>
+                        <li>M.Tech in Computer Science & Engineering</li>
+                        <li>M.Tech in VLSI Design</li>
+                        <li>M.Tech in Environmental Engineering</li>
+                        <li>MCA (Master of Computer Applications)</li>
+                        <li>M.Arch (Master of Architecture)</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Admission Details -->
+                <div class="mb-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                    Admission Details
+                  </h3>
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 class="font-medium text-gray-700 mb-1">
+                          UG Admission
+                        </h4>
+                        <ul
+                          class="list-disc list-inside text-gray-700 space-y-1 text-sm"
+                        >
+                          <li>
+                            Based on KEAM (Kerala Engineering Architecture
+                            Medical) entrance exam
+                          </li>
+                          <li>Application period: January - March</li>
+                          <li>Seat allotment through centralized counseling</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 class="font-medium text-gray-700 mb-1">
+                          PG Admission
+                        </h4>
+                        <ul
+                          class="list-disc list-inside text-gray-700 space-y-1 text-sm"
+                        >
+                          <li>Based on GATE score for M.Tech</li>
+                          <li>Kerala MCA Entrance Exam for MCA</li>
+                          <li>Application period: March - May</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="mt-4">
+                      <h4 class="font-medium text-gray-700 mb-1">
+                        Important Dates
+                      </h4>
+                      <div class="text-sm">
+                        <div
+                          class="flex justify-between py-2 border-b border-gray-200"
+                        >
+                          <span>KEAM Application Start</span>
+                          <span class="font-medium">January 15, 2024</span>
+                        </div>
+                        <div
+                          class="flex justify-between py-2 border-b border-gray-200"
+                        >
+                          <span>KEAM Exam Date</span>
+                          <span class="font-medium">May 2024</span>
+                        </div>
+                        <div class="flex justify-between py-2">
+                          <span>First Allotment</span>
+                          <span class="font-medium">July 2024</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Facilities -->
+                <div class="mb-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                    Facilities
+                  </h3>
                   <div
-                    class="flex items-center text-sm text-gray-600 flex-wrap gap-2 mt-1"
+                    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3"
                   >
-                    <div
-                      class="bg-green-50 text-green-700 px-2 py-1 rounded text-xs font-medium"
-                    >
-                      <i class="fas fa-trophy text-green-500 mr-1"></i>#31 India
-                      Today
+                    <div class="bg-gray-50 p-3 rounded-lg text-center">
+                      <div class="text-blue-500 text-2xl mb-1">
+                        <i class="fas fa-flask"></i>
+                      </div>
+                      <div class="text-sm font-medium">Labs</div>
                     </div>
-                    <div
-                      class="bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs font-medium"
-                    >
-                      <i class="fas fa-check-circle text-blue-500 mr-1"></i>UGC
-                      Recognized
+                    <div class="bg-gray-50 p-3 rounded-lg text-center">
+                      <div class="text-green-500 text-2xl mb-1">
+                        <i class="fas fa-book"></i>
+                      </div>
+                      <div class="text-sm font-medium">Library</div>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg text-center">
+                      <div class="text-purple-500 text-2xl mb-1">
+                        <i class="fas fa-wifi"></i>
+                      </div>
+                      <div class="text-sm font-medium">Wi-Fi</div>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg text-center">
+                      <div class="text-red-500 text-2xl mb-1">
+                        <i class="fas fa-utensils"></i>
+                      </div>
+                      <div class="text-sm font-medium">Cafeteria</div>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg text-center">
+                      <div class="text-yellow-500 text-2xl mb-1">
+                        <i class="fas fa-basketball-ball"></i>
+                      </div>
+                      <div class="text-sm font-medium">Sports</div>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg text-center">
+                      <div class="text-indigo-500 text-2xl mb-1">
+                        <i class="fas fa-home"></i>
+                      </div>
+                      <div class="text-sm font-medium">Hostel</div>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg text-center">
+                      <div class="text-pink-500 text-2xl mb-1">
+                        <i class="fas fa-first-aid"></i>
+                      </div>
+                      <div class="text-sm font-medium">Medical Facilities</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="mb-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                    Contact Information
+                  </h3>
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <h4 class="font-medium text-gray-700 mb-1">Address</h4>
+                        <p class="text-gray-800">
+                          Government Engineering College Thrissur,
+                          Ramavarmapuram, Thrissur, Kerala, 680009
+                        </p>
+                      </div>
+                      <div>
+                        <h4 class="font-medium text-gray-700 mb-1">Contact</h4>
+                        <p class="text-gray-800">
+                          Phone: +91 487 2334590<br />
+                          Email: principal@gectcr.ac.in
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="mt-4 md:mt-0">
-                <button class="text-gray-400 hover:text-blue-500 transition">
-                  <i class="far fa-bookmark text-xl"></i>
-                </button>
-              </div>
-            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 mt-5">
-              <div class="flex">
-                <div
-                  class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mr-3 flex-shrink-0"
-                >
-                  <i class="fas fa-book text-blue-500"></i>
-                </div>
-                <div>
-                  <div class="text-gray-500 text-sm">Courses Offered</div>
-                  <div class="font-semibold text-gray-800">
-                    2 Courses (B.Com, M.Com)
-                  </div>
-                </div>
-              </div>
-              <div class="flex">
-                <div
-                  class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mr-3 flex-shrink-0"
-                >
-                  <i class="fas fa-file-alt text-purple-500"></i>
-                </div>
-                <div>
-                  <div class="text-gray-500 text-sm">Exams Accepted</div>
-                  <div class="font-semibold text-gray-800">
-                    CBSE, Kerala Board
-                  </div>
-                </div>
-              </div>
-              <div class="flex">
-                <div
-                  class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center mr-3 flex-shrink-0"
-                >
-                  <i class="fas fa-rupee-sign text-green-500"></i>
-                </div>
-                <div>
-                  <div class="text-gray-500 text-sm">Total Tuition Fees</div>
-                  <div class="font-semibold text-gray-800">₹14.52K - 1.02L</div>
-                </div>
-              </div>
-              <div class="flex">
-                <div
-                  class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center mr-3 flex-shrink-0"
-                >
-                  <i class="fas fa-briefcase text-orange-500"></i>
-                </div>
-                <div>
-                  <div class="text-gray-500 text-sm">Median Salary</div>
-                  <div class="font-semibold text-gray-800">₹3.5 LPA</div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="flex flex-wrap justify-between items-center mt-5 pt-4 border-t border-gray-100 gap-3"
-            >
-              <div class="flex items-center flex-wrap gap-2 text-sm">
-                <span class="text-green-600 font-medium">94% Placement</span>
-                <span class="text-gray-300 hidden sm:inline">|</span>
-                <span class="text-gray-600">Applications close in 7 days</span>
-              </div>
-              <div class="flex gap-2 flex-wrap w-full sm:w-auto">
+              <!-- Modal Footer -->
+              <div class="bg-gray-100 p-4 flex justify-end">
                 <button
-                  class="border border-gray-200 hover:border-gray-300 bg-gray-50 hover:bg-gray-100 text-gray-700 rounded-lg px-4 py-2 flex items-center transition flex-1 sm:flex-none justify-center"
+                  onclick="document.getElementById('modal-gect').classList.add('hidden')"
+                  class="bg-red-600 hover:bg-red-700 text-white rounded-lg px-4 py-2 font-medium transition"
                 >
-                  <i class="fas fa-phone-alt mr-2"></i> Contact 1
-                </button>
-                <button
-                  class="bg-green-600 hover:bg-green-700 text-white rounded-lg px-5 py-2 flex items-center transition flex-1 sm:flex-none justify-center"
-                >
-                  <i class="fas fa-phone-alt mr-2"></i> Contact 2
-                </button>
-                <button
-                  class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-5 py-2 flex items-center transition flex-1 sm:flex-none justify-center"
-                >
-                  <i class="fab fa-whatsapp mr-2"></i>
-
-                  Join WhatsApp Group
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Vimala College -->
-          <div
-            class="bg-white rounded-xl p-5 mb-4 shadow-sm border border-gray-100 hover:shadow-md transition"
-          >
-            <div
-              class="flex flex-col md:flex-row md:items-start justify-between"
-            >
-              <div class="flex">
-                <div class="mr-4 flex-shrink-0">
-                  <!-- <div class="relative">
-                    <img
-                      src="/api/placeholder/120/120"
-                      alt="Vimala College Logo"
-                      class="w-20 h-20 rounded-lg border border-gray-200"
-                    />
-                    <div
-                      class="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-br-lg rounded-tl-lg"
-                    >
-                      NAAC A
-                    </div>
-                  </div> -->
-                </div>
-                <div>
-                  <div class="flex items-center mb-1">
-                    <h3
-                      class="text-blue-600 font-semibold text-xl hover:underline"
-                    >
-                      Vimala College
-                    </h3>
-                    <div
-                      class="ml-3 bg-yellow-50 text-yellow-700 text-xs font-medium px-2 py-1 rounded"
-                    >
-                      <i class="fas fa-star text-yellow-400 mr-1"></i>4.5/5
-                    </div>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600 mb-1">
-                    <i class="fas fa-map-marker-alt text-gray-400 mr-1"></i>
-                    <span>Thrissur, Kerala</span>
-                    <span class="mx-2 text-gray-300">|</span>
-                    <span class="text-gray-700 font-medium">Private</span>
-                    <span class="mx-2 text-gray-300">|</span>
-                    <span class="text-green-600 font-medium">Estd. 1967</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div
-                      class="bg-green-50 text-green-700 px-2 py-1 rounded text-xs font-medium mr-2"
-                    >
-                      <i class="fas fa-trophy text-green-500 mr-1"></i>#36
-                      Outlook
-                    </div>
-                    <div
-                      class="bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs font-medium"
-                    >
-                      <i class="fas fa-check-circle text-blue-500 mr-1"></i>UGC
-                      Recognized
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-4 md:mt-0">
-                <button class="text-gray-400 hover:text-blue-500 transition">
-                  <i class="far fa-bookmark text-xl"></i>
-                </button>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 mt-5">
-              <div class="flex">
-                <div
-                  class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mr-3 flex-shrink-0"
-                >
-                  <i class="fas fa-book text-blue-500"></i>
-                </div>
-                <div>
-                  <div class="text-gray-500 text-sm">Courses Offered</div>
-                  <div class="font-semibold text-gray-800">
-                    2 Courses (B.Com, M.Com)
-                  </div>
-                </div>
-              </div>
-              <div class="flex">
-                <div
-                  class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mr-3 flex-shrink-0"
-                >
-                  <i class="fas fa-file-alt text-purple-500"></i>
-                </div>
-                <div>
-                  <div class="text-gray-500 text-sm">Exams Accepted</div>
-                  <div class="font-semibold text-gray-800">
-                    CBSE, Kerala Board
-                  </div>
-                </div>
-              </div>
-              <div class="flex">
-                <div
-                  class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center mr-3 flex-shrink-0"
-                >
-                  <i class="fas fa-rupee-sign text-green-500"></i>
-                </div>
-                <div>
-                  <div class="text-gray-500 text-sm">Total Tuition Fees</div>
-                  <div class="font-semibold text-gray-800">₹3.78K - 78K</div>
-                </div>
-              </div>
-              <div class="flex">
-                <div
-                  class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center mr-3 flex-shrink-0"
-                >
-                  <i class="fas fa-briefcase text-orange-500"></i>
-                </div>
-                <div>
-                  <div class="text-gray-500 text-sm">Median Salary</div>
-                  <div class="font-semibold text-gray-800">₹3 - 3.47 LPA</div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="flex flex-wrap justify-between items-center mt-5 pt-4 border-t border-gray-100"
-            >
-              <div class="flex items-center space-x-2 text-sm">
-                <span class="text-green-600 font-medium">90% Placement</span>
-                <span class="text-gray-300">|</span>
-                <span class="text-gray-600">Limited seats available</span>
-              </div>
-              <div class="flex gap-2 flex-wrap w-full sm:w-auto">
-                <button
-                  class="border border-gray-200 hover:border-gray-300 bg-gray-50 hover:bg-gray-100 text-gray-700 rounded-lg px-4 py-2 flex items-center transition flex-1 sm:flex-none justify-center"
-                >
-                  <i class="fas fa-phone-alt mr-2"></i> Contact 1
-                </button>
-                <button
-                  class="bg-green-600 hover:bg-green-700 text-white rounded-lg px-5 py-2 flex items-center transition flex-1 sm:flex-none justify-center"
-                >
-                  <i class="fas fa-phone-alt mr-2"></i> Contact 2
-                </button>
-                <button
-                  class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-5 py-2 flex items-center transition flex-1 sm:flex-none justify-center"
-                >
-                  <i class="fab fa-whatsapp mr-2"></i>
-
-                  Join WhatsApp Group
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- All Saints College -->
-          <div
-            class="bg-white rounded-xl p-5 mb-4 shadow-sm border border-gray-100 hover:shadow-md transition"
-          >
-            <div
-              class="flex flex-col md:flex-row md:items-start justify-between"
-            >
-              <div class="flex">
-                <div class="mr-4 flex-shrink-0">
-                  <!-- <div class="relative">
-                    <img
-                      src="/api/placeholder/120/120"
-                      alt="All Saints College Logo"
-                      class="w-20 h-20 rounded-lg border border-gray-200"
-                    />
-                    <div
-                      class="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-br-lg rounded-tl-lg"
-                    >
-                      NAAC B+
-                    </div>
-                  </div> -->
-                </div>
-                <div>
-                  <div class="flex items-center mb-1">
-                    <h3
-                      class="text-blue-600 font-semibold text-xl hover:underline"
-                    >
-                      All Saints College
-                    </h3>
-                    <div
-                      class="ml-3 bg-yellow-50 text-yellow-700 text-xs font-medium px-2 py-1 rounded"
-                    >
-                      <i class="fas fa-star text-yellow-400 mr-1"></i>4.0/5
-                    </div>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600 mb-1">
-                    <i class="fas fa-map-marker-alt text-gray-400 mr-1"></i>
-                    <span>Thiruvananthapuram, Kerala</span>
-                    <span class="mx-2 text-gray-300">|</span>
-                    <span class="text-gray-700 font-medium">Private</span>
-                    <span class="mx-2 text-gray-300">|</span>
-                    <span class="text-green-600 font-medium">Estd. 1964</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div
-                      class="bg-green-50 text-green-700 px-2 py-1 rounded text-xs font-medium mr-2"
-                    >
-                      <i class="fas fa-trophy text-green-500 mr-1"></i>#45 NIRF
-                    </div>
-                    <div
-                      class="bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs font-medium"
-                    >
-                      <i class="fas fa-check-circle text-blue-500 mr-1"></i>UGC
-                      Recognized
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-4 md:mt-0">
-                <button class="text-gray-400 hover:text-blue-500 transition">
-                  <i class="far fa-bookmark text-xl"></i>
-                </button>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 mt-5">
-              <div class="flex">
-                <div
-                  class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mr-3 flex-shrink-0"
-                >
-                  <i class="fas fa-book text-blue-500"></i>
-                </div>
-                <div>
-                  <div class="text-gray-500 text-sm">Courses Offered</div>
-                  <div class="font-semibold text-gray-800">
-                    3 Courses (B.Com, M.Com, BBA)
-                  </div>
-                </div>
-              </div>
-              <div class="flex">
-                <div
-                  class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mr-3 flex-shrink-0"
-                >
-                  <i class="fas fa-file-alt text-purple-500"></i>
-                </div>
-                <div>
-                  <div class="text-gray-500 text-sm">Exams Accepted</div>
-                  <div class="font-semibold text-gray-800">Kerala Board</div>
-                </div>
-              </div>
-              <div class="flex">
-                <div
-                  class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center mr-3 flex-shrink-0"
-                >
-                  <i class="fas fa-rupee-sign text-green-500"></i>
-                </div>
-                <div>
-                  <div class="text-gray-500 text-sm">Total Tuition Fees</div>
-                  <div class="font-semibold text-gray-800">₹5.2K - 85K</div>
-                </div>
-              </div>
-              <div class="flex">
-                <div
-                  class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center mr-3 flex-shrink-0"
-                >
-                  <i class="fas fa-briefcase text-orange-500"></i>
-                </div>
-                <div>
-                  <div class="text-gray-500 text-sm">Median Salary</div>
-                  <div class="font-semibold text-gray-800">₹3.2 LPA</div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="flex flex-wrap justify-between items-center mt-5 pt-4 border-t border-gray-100"
-            >
-              <div class="flex items-center space-x-2 text-sm">
-                <span class="text-green-600 font-medium">85% Placement</span>
-                <span class="text-gray-300">|</span>
-                <span class="text-gray-600">Admissions open</span>
-              </div>
-              <div class="flex gap-2 flex-wrap w-full sm:w-auto">
-                <button
-                  class="border border-gray-200 hover:border-gray-300 bg-gray-50 hover:bg-gray-100 text-gray-700 rounded-lg px-4 py-2 flex items-center transition flex-1 sm:flex-none justify-center"
-                >
-                  <i class="fas fa-phone-alt mr-2"></i> Contact 1
-                </button>
-                <button
-                  class="bg-green-600 hover:bg-green-700 text-white rounded-lg px-5 py-2 flex items-center transition flex-1 sm:flex-none justify-center"
-                >
-                  <i class="fas fa-phone-alt mr-2"></i> Contact 2
-                </button>
-                <button
-                  class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-5 py-2 flex items-center transition flex-1 sm:flex-none justify-center"
-                >
-                  <i class="fab fa-whatsapp mr-2"></i>
-
-                  Join WhatsApp Group
+                  Close
                 </button>
               </div>
             </div>
@@ -883,12 +1099,79 @@
       </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold mb-4">SSF Kerala</h3>
+            <p class="text-gray-400 text-sm">
+              Sunni Student Federation is a student organization dedicated to
+              educational empowerment and community service.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">Home</a></li>
+              <li><a href="#" class="hover:text-white">About Us</a></li>
+              <li><a href="#" class="hover:text-white">Colleges</a></li>
+              <li><a href="#" class="hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li class="flex items-center">
+                <i class="fas fa-map-marker-alt mr-2"></i> SSF Headquarters,
+                Kerala
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone-alt mr-2"></i> +91 1234567890
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-2"></i> helpdesk@ssfkerala.org
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm"
+        >
+          <p>© 2023 SSF Kerala. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
     <script>
+      // Toggle mobile filters
+      function toggleMobileFilters() {
+        const filterSidebar = document.getElementById("filterSidebar");
+        filterSidebar.classList.toggle("active");
+      }
+
       // Toggle filter sections
       function toggleFilterSection(sectionId) {
         const section = document.getElementById(sectionId);
         const icon = document.getElementById(sectionId + "Icon");
-        if (section.style.display === "none" || section.style.display === "") {
+        if (section.style.display === "none") {
           section.style.display = "block";
           icon.classList.remove("fa-chevron-down");
           icon.classList.add("fa-chevron-up");
@@ -898,21 +1181,6 @@
           icon.classList.add("fa-chevron-down");
         }
       }
-
-      // Toggle mobile filters
-      function toggleMobileFilters() {
-        const filterSidebar = document.getElementById("filterSidebar");
-        filterSidebar.classList.toggle("active");
-      }
-
-      // Initialize all filter sections as collapsed on mobile
-      document.addEventListener("DOMContentLoaded", function () {
-        if (window.innerWidth < 1024) {
-          document.getElementById("locationFilter").style.display = "none";
-          document.getElementById("courseFilter").style.display = "none";
-          document.getElementById("typeFilter").style.display = "none";
-        }
-      });
     </script>
   </body>
 </html>
